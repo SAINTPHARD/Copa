@@ -1,0 +1,75 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal */
+.container__contato {
+    background-color: #ff8126; /* Cor laranja */
+    color: #333;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+/* Texto e lista */
+.texto h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #003e2c; /* Cor do título */
+    margin-bottom: 15px;
+}
+
+.texto ul {
+    list-style: none;
+    color: #fff;
+}
+
+.texto ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Destaques no texto */
+.texto ul li strong {
+    font-weight: bold;
+    color: #003e2c; /* Destaque verde escuro */
+}
+
+/* Botão */
+.botao__socio {
+    background-color: #20332c; /* Cor verde escuro */
+    color: #fff;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.botao__socio:hover {
+    background-color: #16251f; /* Efeito hover com cor mais escura */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container__contato {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); /* Importando a fonte Roboto com suas variações */
+
+.biografias {
+    text-align: center;     /* Centraliza o texto */
+    padding: 2rem;          /* Adiciona espaçamento interno de 2rem */
+    max-width: 1000px;      /* Define largura máxima do container */
+    margin: 0 auto;         /* Centraliza o container na página */
+}
+
+.biografias h4 {
+    font-size: 2rem;        /* Define tamanho da fonte */
+    font-weight:'roboto';   /* Define a fonte como Roboto */
+    margin-bottom: 4rem;    /* Adiciona margem inferior */
+    position: relative;     /* Permite posicionamento relativo */
+    text-align: center;     /* Centraliza o texto */
+}
+
+.container__biografia {
+    display: flex;          /* Usa layout flexbox */
+    flex-wrap: wrap;        /* Permite quebra de linha dos itens */
+    justify-content:space-between; /* Distribui espaço entre os itens */
+    gap:8rem;              /* Define espaçamento entre os itens */
+}
+
+.biografia {
+    flex: 1;               /* Permite que o item cresça */
+    text-align: left;      /* Alinha texto à esquerda */
+    padding: 1rem;         /* Adiciona espaçamento interno */
+    background-color: #f8f8f8; /* Define cor de fundo */
+    border-radius: 8px;    /* Arredonda os cantos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+}
+
+.biografia__texto {
+    font-style:oblique;    /* Define estilo da fonte como itálico */
+    color: black;          /* Define cor do texto */
+    margin-bottom: 1rem;   /* Adiciona margem inferior */
+    font-size: 1.5rem;     /* Define tamanho da fonte */
+    word-spacing: 0.8rem;  /* Define espaçamento entre palavras */
+    line-height: 1;        /* Define altura da linha */
+    max-height: 8em;       /* Define altura máxima */
+    overflow: hidden;      /* Esconde conteúdo que ultrapassar */
+    display: -webkit-box;  /* Necessário para truncamento de texto */
+    -webkit-line-clamp: 8; /* Limita número de linhas */
+    -webkit-box-orient: vertical; /* Define orientação vertical */
+}
+
+.biografia__autor {
+    color: var(--color-secundary); /* Usa cor da variável CSS */
+    font-size: 1.5rem;     /* Define tamanho da fonte */
+}
+
+span {
+    font-weight: bold;     /* Define peso da fonte como negrito */
+    color: green;          /* Define cor do texto */
+    font-size: 1.7rem;     /* Define tamanho da fonte */
+}
+
+.nome {
+    font-weight: bold;     /* Define peso da fonte como negrito */
+    color: var(--color-secundary); /* Usa cor da variável CSS */
+    font-size: 1.5rem;     /* Define tamanho da fonte */
+}
+
+/* =================== Media Queries para responsividade =================== */
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .biografias {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    .container__biografia {
+        gap: 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .biografias h4 {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .container__biografia {
+        gap: 3rem;
+    }
+
+    .biografia__texto {
+        font-size: 1.3rem;
+        word-spacing: 0.6rem;
+    }
+
+    .biografia__autor {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container__biografia {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .biografia {
+        width: 100%;
+    }
+
+    .biografia__texto {
+        font-size: 1.2rem;
+        word-spacing: 0.4rem;
+        -webkit-line-clamp: 6;
+    }
+
+    span {
+        font-size: 1.4rem;
+    }
+
+    .nome {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .biografias h4 {
+        font-size: 1.5rem;
+    }
+
+    .biografia__texto {
+        font-size: 1.1rem;
+        -webkit-line-clamp: 5;
+    }
+}

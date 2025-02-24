@@ -1,0 +1,166 @@
+
+ /* Resetando margens e preenchimentos para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e bordas sejam incluídos na largura e altura totais dos elementos */
+}
+
+/* Estilo geral do corpo da página */
+
+h1 {
+    color: var(--color--tertiary);
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 2.5rem;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-family: normal;
+}
+
+/* Container principal que organiza os cards em um layout de grade (grid) com 3 colunas */
+.card-container {
+    display: grid; /* Usa grid para organizar os elementos */
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas de largura igual */
+    gap: 0; /* Remove qualquer espaço entre os cards */
+    width: 70%; /* Define a largura máxima do container em 90% da tela */
+    padding: 0; /* Remove o padding ao redor do container */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    /* color: #ffffff; */
+}
+
+/* Estilo para cada card individual */
+.card {
+    position: relative; /* Define o posicionamento relativo para usar posicionamento absoluto em seus filhos (título e descrição) */
+    width: 100%; /* Define que cada card ocupa toda a largura da coluna */
+    height: 300px; /* Define uma altura fixa para os cards */
+    border-radius: 0; /* Remove a borda arredondada para os cards ficarem perfeitamente alinhados */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse as bordas do card */
+    cursor: pointer; /* Altera o cursor para um ícone de ponteiro quando o mouse passar sobre o card */
+    transition: transform 0.3s ease; /* Suaviza qualquer transformação (como mudança de escala) com uma transição de 0,3 segundos */
+}
+
+/* Estilo da imagem dentro do card */
+.card img {
+    width: 100%; /* A imagem ocupa toda a largura do card */
+    height: 100%; /* A imagem ocupa toda a altura do card */
+    object-fit: cover; /* A imagem será redimensionada para cobrir todo o card, mantendo a proporção */
+    transition: opacity 0.3s ease; /* Suaviza a mudança de opacidade ao passar o mouse */
+}
+
+/* Estilo do título centralizado no card */
+.card h3 {
+    position: absolute; /* Posiciona o título de forma absoluta em relação ao card */
+    top: 50%; /* Move o título 50% para baixo a partir do topo */
+    left: 50%; /* Move o título 50% para a direita a partir da borda esquerda */
+    transform: translate(-50%, -50%); /* Centraliza o título no card */
+    color: white; /* Define a cor do texto como branco */
+    font-size: 20px; /* Define o tamanho da fonte */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra no texto para melhor visibilidade */
+    z-index: 2; /* Garante que o título fique acima da imagem */
+    transition: opacity 0.3s ease; /* Suaviza a transição de opacidade */
+    text-transform: uppercase;
+    /* font-weight: 700; */
+    /* letter-spacing: 2px; */
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* Descrição que aparece ao passar o mouse sobre o card */
+.card .description {
+    position: absolute; /* Posiciona a descrição de forma absoluta para cobrir todo o card */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Faz com que a descrição ocupe toda a área do card */
+    background-color: var(--color--tertiary); /* Fundo semitransparente escuro para a descrição */
+    color: white; /* Define a cor do texto da descrição como branco */
+    opacity: 0; /* Descrição invisível inicialmente */
+    padding: 20px; /* Espaçamento interno da descrição */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o texto da descrição */
+    align-items: center; /* Centraliza verticalmente o texto da descrição */
+    text-align: center; /* Alinha o texto ao centro */
+    z-index: 3; /* Garante que a descrição fique acima de todos os outros elementos do card */
+    transition: opacity 0.3s ease; /* Suaviza a transição de opacidade */
+    font-size: 18px;
+}
+
+/* Efeito hover: exibe a descrição e esconde o título */
+.card:hover .description {
+    opacity: 1; /* Exibe a descrição ao passar o mouse */
+}
+
+.card:hover img {
+    opacity: 0.3; /* Reduz a opacidade da imagem para destacar a descrição */
+}
+
+.card:hover h3 {
+    opacity: 0; /* Esconde o título ao passar o mouse */
+}
+
+
+/* Para tablets (telas menores que 1024px) */
+@media screen and (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Muda para 2 colunas */
+        width: 85%;
+        /* Aumenta um pouco a largura */
+    }
+
+    .card h3 {
+        font-size: 24px;
+        /* Reduz o tamanho da fonte */
+    }
+}
+
+/* Para dispositivos móveis (telas menores que 768px) */
+@media screen and (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        /* Muda para 1 coluna */
+        width: 90%;
+        /* Aumenta mais a largura */
+    }
+
+    h1 {
+        font-size: 35px;
+        /* Reduz o tamanho do título principal */
+        margin-bottom: 1.5rem;
+    }
+
+    .card {
+        height: 250px;
+        /* Reduz a altura dos cards */
+    }
+
+    .card h3 {
+        font-size: 20px;
+        /* Reduz mais o tamanho da fonte */
+    }
+
+    .card .description {
+        font-size: 16px;
+        /* Reduz o tamanho da fonte da descrição */
+        padding: 15px;
+        /* Reduz o padding */
+    }
+}
+
+/* Para telas muito pequenas (menores que 480px) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        height: 200px;
+    }
+
+    .card .description {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

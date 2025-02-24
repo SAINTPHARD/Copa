@@ -1,0 +1,115 @@
+/* Estilizando a seção geral */
+.nossas__marcas {
+    /* background-color: #AF8F6F; */
+    text-align:start;
+    padding: 0;
+    margin: 0;
+}
+
+.nossas__marcas h2 {
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    /* margin-left:50px; */
+    /* padding-left: 15.5rem;*/
+    font-weight:normal;
+    color: black;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.marca__texto {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 10px;
+    margin-left:3.5rem;
+    margin-right:3.5rem;
+    padding-left: 15.5rem;
+    padding-right: 15.4rem;
+}
+
+.nossas__marcas p {
+    font-size: 1.5em;
+    color: black;
+    margin-bottom: 70px;
+}
+
+/* Contêiner flexível para os cards */
+.marcas__container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Para garantir que os cards se ajustem em telas menores */
+}
+
+/* Estilos dos cards */
+.marca__item {
+    background-color: #fff;
+    border: 5px solid #eee;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px; /* Adiciona espaço interno nos cards */
+    width: 420px; /* Mantém todos os cards com a mesma largura */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente o conteúdo dentro do card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Define uma transição suave para a transformação (zoom) e para a sombra */
+}
+.marca__item:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do card levemente (5%) ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Aumenta a intensidade da sombra ao passar o mouse */
+}
+
+.marca__item img {
+    width: 200px; /* Define um tamanho padrão para as logos */
+    height: auto;
+    margin-bottom: 25px;
+    margin-bottom: 15px; /* Adiciona espaço abaixo da imagem */
+    transition: transform 0.3s ease; /* Aplica uma transição suave de transformação à imagem */
+}
+
+.marca__item p {
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+    font-size: 1.6em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.botao {
+    background-color: #ff7f00;
+    color: white;
+    text-decoration: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Aplica uma transição suave para a mudança de cor de fundo ao passar o mouse*/
+    font-size: 1.6em;
+}
+
+.marca__item:hover img {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem (10%) quando o mouse passa sobre o card */
+}
+.botao:hover {
+    background-color: #e56f00;
+}
+
+
+.description__final {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.6em;
+    color: var(--color-secundary);
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-left: 15.5rem;
+    padding-right: 15.4rem;
+}
+
+.empresa__email {
+    font-weight: bold;
+    color:#ff7f00;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-style: oblique;
+    text-decoration:underline; 
+}

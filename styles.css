@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('/styles/pages/quemsomos.css');
+@import 'styles/banner.css';
+@import 'styles/content-sections.css';
+@import 'styles/typography.css';
+
+
+:root{
+    --color-primary: white;
+    --color-secundary: #243834;
+    --color--tertiary: #FF8931;
+    --color--tertiary-hover: #FF8931;
+    --black: #131010;
+    --black-palto: #050101;
+    --borda: #fff;
+    --color-zinza: #6c757d;
+    --azul-palto: #048576;
+    --color-verde:green;
+    --color-verde-clora:#003e2c;
+    --color-azul:blue;
+    --color-rosa:pink;
+    --color-laranja:orange;  
+}
+
+/* Define que todos os elementos terão margem e padding zerados para evitar espaçamentos padrão inesperados */
+
+  .container__contato {
+    background-color: #FF8931;
+    border: 1px solid var(--color--tertiary);
+    margin: 25px;
+    padding: 8px;
+    margin-left: 230px;
+    margin-right: 230px;
+    color: var(--color-primary);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 100px;
+  }
+
+  h3 {
+    color: var(--color-secundary);
+    font-size: 25px;
+    margin: 10px;
+    text-align: right;
+    align-items: center;
+  }
+
+  .texto {
+    color: var(--color-secundary);
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .texto h3 {
+    font-weight: bold;
+    font-size: 1.9rem;/* Tamanho da fonte do título */
+    font-family: 'roboto';
+  }
+  .texto ul {
+    list-style: none;
+    padding-left: 10px;
+    padding: 0.1rem;
+    text-align:left;
+    margin: 0;
+    padding: 0;
+    top: 100%;
+    left: auto;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  .texto ul li {
+    color: var(--color-primary);
+    margin: 1px;
+    padding-left: 1px;
+    text-decoration: solid;
+    position: relative ;
+    text-align: left;
+    font-weight: normal;
+  }
+
+  .texto ul li::before {
+    content: "★"; /* Símbolo Unicode para estrela */
+    color: var(--color-secundary); /* Cor da estrela */
+    margin-right: 2px;
+    padding-right: 2px;
+    font-size: 1.3rem; /* Tamanho da estrela */
+    position: relative; /* Posiciona a estrela de forma absoluta dentro do li */
+    left: 0; /* Posiciona a estrela à esquerda do item da lista */
+    top: 0; /* Alinha verticalmente a estrela no topo */
+}
+
+.botao__socio {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: 25px;
+    font-weight: bold;
+    background-color: var(--black);
+    border-radius: 15px;
+    padding: 2.2rem 5rem;
+    text-align: center;
+    align-items:end;
+    text-decoration: none;
+    margin: 25px;
+    text-transform: uppercase;
+
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    padding: 60px;
+    
+  }
+  
+  .market {
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid var(--borda);
+    border-radius: 5px;
+    height: 200px;
+    float: left;
+    box-sizing: border-box;
+  }
+  
+  .market img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .market span {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .market p {
+    font-size: 16px;
+  }
+  
+  .descricao {
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: var(--color--tertiary);
+  }
+
+  .conteudos {
+    display: flex;
+    justify-content:space-around; /* Distribui os itens uniformemente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    flex-wrap: wrap; /* Permite que os itens quebrem para linhas novas em telas menores */
+    background-color: var(--color-primary);
+    margin: 15px;
+    padding: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 40px;
+  }
+  
+  .esquerda, .direita {
+    flex: 1; /* Faz com que cada item ocupe o espaço disponível */
+    text-align: center;
+    padding: 50px;
+    margin: 30px;
+  }
+  
+  .direita {
+    border-left: none; /* Remove a borda esquerda, já que o espaço entre os itens será criado pelo flexbox */
+    /* border-right: #048576; */
+    border-left: 1px solid var(--borda);
+  }
+  
+  #meuSpan {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--color--tertiary);
+    text-transform: uppercase;
+  }
+  
+  .meuSpan img {
+    /* Estilos para imagens dentro de #meuSpan */
+    margin-bottom: 15px; /* Adiciona uma margem inferior à imagem */
+  }

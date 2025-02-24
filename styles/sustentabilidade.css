@@ -1,0 +1,584 @@
+/* Definição de variáveis CSS para cores e transições */
+:root {
+    --primary-color: #1B3B35;      /* Cor principal - verde escuro */
+    --primary-light: #2c5c52;      /* Variação mais clara da cor principal */
+    --secondary-color: #FF6B00;    /* Cor secundária - laranja */
+    --secondary-light: #ff8533;    /* Variação mais clara da cor secundária */
+    --text-color: #2D3748;         /* Cor padrão para textos */
+    --text-light: #4A5568;         /* Cor mais clara para textos */
+    --white: #fff;                 /* Cor branca */
+    --gray-50: #F7FAFC;            /* Tons de cinza */
+    --gray-100: #EDF2F7;           /* para diferentes */
+    --gray-200: #E2E8F0;           /* usos na interface */
+    --transition: all 0.3s ease;    /* Transição padrão para animações */
+}
+
+/* Reset básico de CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos base do corpo da página */
+body {
+    font-family: 'Inter', sans-serif;  /* Define a fonte principal */
+    line-height: 1.6;                  /* Define a altura da linha */
+    color: var(--text-color);          /* Define a cor do texto */
+    background-color: var(--gray-50);  /* Define a cor de fundo */
+}
+
+/* Container principal para limitar largura do conteúdo */
+.container {
+    max-width: 1200px;                 /* Largura máxima do conteúdo */
+    margin: 0 auto;                    /* Centraliza o container */
+    padding: 0 24px;                   /* Adiciona padding lateral */
+}
+
+/* Estilos da barra de navegação */
+.navbar {
+    background-color: var(--primary-color);  /* Cor de fundo da navbar */
+    padding: 1rem 0;                        /* Espaçamento interno */
+    position: fixed;                        /* Fixa a navbar no topo */
+    width: 100%;                           /* Largura total */
+    top: 0;                                /* Alinha ao topo */
+    z-index: 1000;                         /* Garante que fique sobre outros elementos */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave */
+    transition: var(--transition);          /* Adiciona transição suave */
+}
+
+/* Efeito de scroll na navbar */
+.navbar.scrolled {
+    padding: 0.8rem 0;                     /* Reduz o padding ao rolar */
+    background-color: rgba(27, 59, 53, 0.95); /* Adiciona transparência */
+    backdrop-filter: blur(10px);           /* Efeito de blur no fundo */
+}
+
+/* Layout do container da navbar */
+.navbar .container {
+    display: flex;                         /* Layout flexbox */
+    justify-content: space-between;        /* Espaça elementos */
+    align-items: center;                   /* Alinha verticalmente */
+}
+
+/* Estilo do logo */
+.logo {
+    height: 40px;                         /* Altura do logo */
+    transition: var(--transition);         /* Transição suave */
+}
+
+/* Links de navegação */
+.nav-links {
+    display: flex;                        /* Layout flexbox */
+    gap: 2.5rem;                          /* Espaço entre links */
+    align-items: center;                  /* Alinha verticalmente */
+}
+
+/* Estilo individual dos links */
+.nav-links a {
+    color: var(--white);                  /* Cor do texto */
+    text-decoration: none;                /* Remove sublinhado */
+    font-weight: 500;                     /* Peso da fonte */
+    transition: var(--transition);         /* Transição suave */
+    position: relative;                    /* Para efeito de hover */
+}
+
+/* Efeito de hover nos links */
+.nav-links a::after {
+    content: '';                          /* Cria pseudo-elemento */
+    position: absolute;                   /* Posicionamento absoluto */
+    bottom: -4px;                         /* Distância do texto */
+    left: 0;                              /* Alinha à esquerda */
+    width: 0;                             /* Largura inicial zero */
+    height: 2px;                          /* Altura da linha */
+    background-color: var(--secondary-color); /* Cor da linha */
+    transition: var(--transition);         /* Transição suave */
+}
+
+/* Efeito de hover completo no link */
+.nav-links a:hover::after {
+    width: 100%;                          /* Aumenta a largura todo */
+}
+
+/* Botão de contato */
+.btn-contact {
+    background-color: var(--secondary-color);  /* Cor de fundo do botão */
+    color: var(--white);                      /* Cor do texto */
+    padding: 0.75rem 1.5rem;                  /* Espaçamento interno */
+    border: none;                             /* Remove borda */
+    border-radius: 8px;                       /* Borda arredondada */
+    font-weight: 600;                         /* Peso da fonte */
+    cursor: pointer;                          /* Cursor pointer */
+    transition: var(--transition);            /* Transição suave */
+    box-shadow: 0 2px 4px rgba(255, 107, 0, 0.2); /* Sombra */
+}
+
+.btn-contact:hover {
+    background-color: var(--secondary-light); /* Muda a cor ao passar o mouse */
+    transform: translateY(-2px);              /* Efeito de leve subida */
+    box-shadow: 0 4px 6px rgba(255, 107, 0, 0.3); /* Aumenta a sombra */
+}
+
+/* Seção principal (Hero) */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); /* Gradiente de fundo */
+    color: var(--white);                              /* Cor do texto branca */
+    padding: 8rem 0 6rem;                             /* Espaçamento interno */
+    position: relative;                               /* Para elementos posicionados */
+    overflow: hidden;                                 /* Esconde transbordos */
+}
+
+.hero::before {
+    content: '';                                      /* Elemento de fundo extra */
+    position: absolute;                               /* Posicionamento absoluto */
+    top: 0;                                           /* Alinha ao topo */
+    right: 0;                                         /* Alinha à direita */
+    bottom: 0;                                        /* Estende até o fundo */
+    left: 0;                                          /* Estende até a esquerda */
+    background: url('pattern.svg') repeat;            /* Padrão de fundo */
+    opacity: 0.1;                                     /* Opacidade reduzida */
+}
+
+.hero .container {
+    position: relative;                               /* Para z-index funcionar */
+    z-index: 1;                                       /* Garante que fica sobre o fundo */
+}
+
+.hero h1 {
+    font-size: 3.5rem;                                /* Tamanho grande do texto */
+    line-height: 1.2;                                 /* Altura da linha compacta */
+    margin-bottom: 1.5rem;                            /* Espaço abaixo */
+    font-weight: 700;                                 /* Texto em negrito */
+    max-width: 800px;                                 /* Limita a largura */
+}
+
+.hero p {
+    font-size: 1.25rem;                               /* Fonte maior para parágrafo */
+    max-width: 600px;                                 /* Limita a largura */
+    opacity: 0.9;                                     /* Opacidade para contraste */
+}
+
+/* Seção Estratégica */
+.strategy {
+    padding: 6rem 0;                                  /* Espaçamento interno */
+    background-color: var(--white);                   /* Fundo branco */
+}
+
+.strategy h2 {
+    text-align: center;                               /* Centraliza o texto */
+    margin-bottom: 3rem;                              /* Espaço abaixo */
+    font-size: 2.5rem;                                /* Fonte grande */
+    color: var(--primary-color);                      /* Cor primária */
+}
+
+.strategy-cards {
+    display: grid;                                    /* Layout de grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+    gap: 2rem;                                        /* Espaçamento entre itens */
+    margin-top: 2rem;                                 /* Espaço acima */
+}
+
+.card {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-light) 100%); /* Gradiente no cartão */
+    color: var(--white);                              /* Texto branco */
+    padding: 2rem;                                    /* Espaçamento interno */
+    border-radius: 16px;                              /* Bordas arredondadas */
+    transition: var(--transition);                    /* Transição suave */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);            /* Sombra */
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);          /* Muda posição e tamanho ao passar o mouse */
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);          /* Aumenta a sombra */
+}
+
+.card h3 {
+    font-size: 1.5rem;                                /* Fonte para o texto do título */
+    margin-bottom: 1rem;                              /* Espaço abaixo */
+    position: relative;                               /* Para o ::after */
+    padding-bottom: 1rem;                             /* Espaço abaixo do texto */
+}
+
+.card h3::after {
+    content: '';                                      /* Elemento decorativo */
+    position: absolute;                               /* Posicionamento absoluto */
+    bottom: 0;                                        /* Alinhado ao fundo */
+    left: 0;                                          /* Alinhado à esquerda */
+    width: 40px;                                      /* Largura do elemento */
+    height: 3px;                                      /* Altura do elemento */
+    background-color: rgba(255,255,255,0.3);          /* Cor e opacidade */
+    border-radius: 2px;                               /* Bordas arredondadas */
+}
+
+/* Seção de Relatórios */
+.reports {
+    background-color: var(--gray-50);                 /* Fundo cinza claro */
+    padding: 6rem 0;                                  /* Espaçamento interno */
+}
+
+.reports h2 {
+    text-align: center;                               /* Texto centralizado */
+    margin-bottom: 3rem;                              /* Espaço abaixo */
+    font-size: 2.5rem;                                /* Fonte maior */
+    color: var(--primary-color);                      /* Cor primária */
+}
+
+.reports-grid {
+    display: grid;                                    /* Layout de grid */
+    grid-template-columns: 1fr 1fr;                   /* Duas colunas */
+    gap: 4rem;                                        /* Espaçamento entre itens */
+    align-items: center;                              /* Alinha verticalmente ao centro */
+}
+
+.reports-links {
+    display: flex;                                    /* Layout flexbox */
+    flex-direction: column;                           /* Colunas em vez de linhas */
+    gap: 1.5rem;                                      /* Espaço entre links */
+}
+
+.reports-links a {
+    color: var(--secondary-color);                    /* Cor dos links */
+    text-decoration: none;                            /* Sem sublinhado */
+    font-weight: 500;                                 /* Fonte negrito moderado */
+    font-size: 1.1rem;                                /* Tamanho do texto */
+    padding: 1rem;                                    /* Espaçamento interno */
+    background-color: var(--white);                   /* Fundo branco */
+    border-radius: 8px;                               /* Bordas arredondadas */
+    transition: var(--transition);                    /* Transição suave */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);           /* Sombra leve */
+}
+
+.reports-links a:hover {
+    background-color: var(--secondary-color);         /* Muda cor de fundo ao passar o mouse */
+    color: var(--white);                              /* Texto branco */
+    transform: translateX(8px);                       /* Muda posição */
+}
+
+.report-image img {
+    width: 100%;                                      /* Imagem ocupa toda a largura */
+    border-radius: 16px;                              /* Bordas arredondadas */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);           /* Sombra */
+    transition: var(--transition);                    /* Transição suave */
+}
+
+.report-image img:hover {
+    transform: scale(1.02);                           /* Aumenta levemente o tamanho */
+}
+
+/* Seção ESG */
+.esg {
+    padding: 6rem 0;                                  /* Espaçamento interno */
+    background-color: var(--white);                   /* Fundo branco */
+}
+
+.esg h2 {
+    text-align: center;                               /* Centraliza texto */
+    margin-bottom: 3rem;                              /* Espaço abaixo */
+    font-size: 2.5rem;                                /* Fonte maior */
+    color: var(--primary-color);                      /* Cor primária */
+}
+
+.accordion-item {
+    background-color: var(--white);                   /* Fundo branco */
+    border-radius: 12px;                              /* Bordas arredondadas */
+    margin-bottom: 1rem;                              /* Espaço abaixo */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);           /* Sombra leve */
+    overflow: hidden;                                 /* Esconde transbordo */
+}
+
+.accordion-header {
+    width: 100%;                                      /* Preenche toda a largura */
+    padding: 1.5rem;                                  /* Espaçamento interno */
+    display: flex;                                    /* Layout flexbox */
+    justify-content: space-between;                   /* Espaça itens */
+    align-items: center;                              /* Alinha ao centro verticalmente */
+    background-color: var(--white);                   /* Fundo branco */
+    border: none;                                     /* Sem borda */
+    cursor: pointer;                                  /* Cursor de clique */
+    font-weight: 600;                                 /* Texto em negrito */
+    color: var(--text-color);                         /* Cor do texto */
+    transition: var(--transition);                    /* Transição suave */
+}
+
+.accordion-header:hover {
+    background-color: var(--gray-50);                 /* Muda cor de fundo ao passar o mouse */
+}
+
+.accordion-content {
+    padding: 0 1.5rem;                                /* Espaçamento interno */
+    max-height: 0;                                    /* Altura inicial compacta */
+    overflow: hidden;                                 /* Esconde transbordo */
+    transition: max-height 0.3s ease-out;             /* Animação de mostrar conteúdo */
+    background-color: var(--gray-50);                 /* Fundo cinza claro */
+}
+
+.accordion-content.active {
+    padding: 1.5rem;                                  /* Espaçamento quando ativo */
+    max-height: 500px;                                /* Espaço máximo quando ativo */
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--primary-color);           /* Cor de fundo */
+    color: var(--white);                              /* Texto branco */
+    padding: 6rem 0 2rem;                             /* Espaçamento interno */
+}
+
+.footer-grid {
+    display: grid;                                    /* Layout de grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta colunas */
+    gap: 3rem;                                        /* Espaço entre itens */
+}
+
+.footer-column h3 {
+    margin-bottom: 1.5rem;                            /* Espaço abaixo */
+    font-size: 1.2rem;                                /* Tamanho do texto */
+    position: relative;                               /* Para o ::after */
+    padding-bottom: 0.5rem;                           /* Espaço abaixo do texto */
+}
+
+.footer-column h3::after {
+    content: '';                                      /* Elemento decorativo */
+    position: absolute;                               /* Posicionamento absoluto */
+    bottom: 0;                                        /* Alinhado ao fundo */
+    left: 0;                                          /* Alinhado à esquerda */
+    width: 30px;                                      /* Largura do elemento */
+    height: 2px;                                      /* Altura do elemento */
+    background-color: var(--secondary-color);         /* Cor e opacidade */
+}
+
+.footer-column ul {
+    list-style: none;                                 /* Remove marcadores */
+}
+
+.footer-column li {
+    margin-bottom: 0.8rem;                            /* Espaço abaixo */
+}
+
+.footer-column a {
+    color: var(--gray-200);                           /* Cor dos links */
+    text-decoration: none;                            /* Sem sublinhado */
+    transition: var(--transition);                    /* Transição suave */
+}
+
+.footer-column a:hover {
+    color: var(--secondary-color);                    /* Muda cor ao passar o mouse */
+    padding-left: 8px;                                /* Muda posição */
+}
+
+.footer-bottom {
+    margin-top: 4rem;                                 /* Espaço acima */
+    padding-top: 2rem;                                /* Espaçamento interno */
+    border-top: 1px solid rgba(255,255,255,0.1);      /* Linha superior */
+    text-align: center;                               /* Texto centralizado */
+    color: var(--gray-200);                           /* Cor do texto */
+}
+
+/* Media Queries para Responsividade */
+
+/* Desktop menor (até 1200px) */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .strategy-cards {
+        gap: 1.5rem;
+    }
+}
+
+/* Tablets e dispositivos médios (até 992px) */
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .hero {
+        padding: 6rem 0 4rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .strategy h2,
+    .reports h2,
+    .esg h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .reports-grid {
+        gap: 2rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets menores e dispositivos móveis grandes (até 768px) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+        padding: 0 16px;
+    }
+
+    .navbar {
+        padding: 0.8rem 0;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Menu mobile deve ser ativado aqui */
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .strategy-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .reports-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .reports-links {
+        order: 2;
+    }
+
+    .report-image {
+        order: 1;
+    }
+
+    .card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+
+    .accordion-header {
+        padding: 1.2rem;
+    }
+
+    .footer {
+        padding: 4rem 0 2rem;
+    }
+}
+
+/* Dispositivos móveis (até 576px) */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .hero {
+        padding: 5rem 0 3rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .strategy,
+    .reports,
+    .esg {
+        padding: 4rem 0;
+    }
+
+    .strategy h2,
+    .reports h2,
+    .esg h2 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    .reports-links a {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .reports-links a:hover {
+        transform: translateX(4px);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 1rem;
+    }
+
+    .footer-bottom {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Dispositivos muito pequenos (até 360px) */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .btn-contact {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+}
+
+/* Ajustes para altura da tela */
+@media (max-height: 700px) {
+    .hero {
+        padding: 4rem 0 2rem;
+    }
+
+    .strategy,
+    .reports,
+    .esg {
+        padding: 3rem 0;
+    }
+}
+
+/* Suporte para telas de alta resolução */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+}

@@ -1,0 +1,245 @@
+.swiper {
+    width: 100vw; /* ocupa a largura inteira da tela */
+    height: 80vh; /* ocupa metade da altura da tela */
+    overflow: hidden;
+  }
+  
+  .swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .swiper-slide img {
+    width: 1000%;
+    height: 300%;
+    max-width: 100%;
+    object-fit: cover; /* Cobre toda a área da imagem */
+    transition: transform 0.5s ease; /* Suaviza o efeito de zoom */
+    
+  } 
+  
+  /* Estilos para o texto */
+  .text-content {
+    position: absolute;
+    top: 10%; /*Posicionar os textos no top*/
+    left: 10%; /*posicionar a esquerda*/
+    color: #fff;
+    /* background-color: rgba(0, 0, 0, 0.5); Fundo semi-transparente */
+    padding: 10px;
+    border-radius: 4px;
+    max-width: 50%; /* Limita a largura do texto */
+    text-align: center;
+    max-width: 80%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .text-content h2 {
+    font-size: 5.5em;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+    text-align:left;
+    animation: animate__rotateOutUpRight;
+    animation: dance 3s ease-in-out infinite;
+  }
+  
+  .text-content p {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+  }
+  
+  .swiper__logo img {
+    width: 20%;
+    height: 20%;
+    margin: 2rem;  
+    align-items: flex-start;
+  }
+  
+  /* Efeito de fade-in para o texto */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+  
+  .text-content h2 p {
+    text-align: left;
+    font-weight: normal;
+  }
+  
+  /* Aparecimento gradual do texto */
+  .swiper-slide-active .text-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .empresa {
+    background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    margin: 14rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-secundary);
+  }
+  
+  .empresa:hover {
+    background-color: #FFA500;
+    color: #FFFFFF;
+  }
+  
+  
+  /* Posição e estilo da paginação (bolinhas) */
+  .swiper-pagination {
+    bottom: 20px;
+    text-align: center;
+  }
+  
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 6px;
+    transition: background-color 0.3s;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: #FFA500; /* Altere para a cor desejada */
+  }
+  
+  /* Botões de navegação */
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #FFFFFF; /* Cor dos ícones */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background-color: #FFA500; 
+  }
+
+  /* Personalizando a barra de rolagem */
+  .swiper-scrollbar {
+    bottom: 20px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: #FFA500; 
+    border-radius: 3px;
+  }
+
+  /* Responsividade */
+    /* Estilos base mantidos... */
+  
+    /* Media Queries */
+    @media screen and (max-width: 1024px) {
+      .swiper {
+        height: 70vh;
+      }
+  
+      .text-content h2 {
+        font-size: 4em;
+      }
+  
+      .text-content p {
+        font-size: 2em;
+      }
+  
+      .empresa {
+        margin: 8rem;
+        font-size: 14px;
+      }
+    }
+  
+    @media screen and (max-width: 768px) {
+      .swiper {
+        height: 60vh;
+      }
+  
+      .text-content {
+        top: 5%;
+        left: 5%;
+        max-width: 90%;
+      }
+  
+      .text-content h2 {
+        font-size: 3em;
+        margin-bottom: 0.3em;
+      }
+  
+      .text-content p {
+        font-size: 1.5em;
+      }
+  
+      .empresa {
+        margin: 4rem;
+        padding: 15px;
+      }
+  
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  
+    @media screen and (max-width: 480px) {
+      .swiper {
+        height: 50vh;
+      }
+  
+      .text-content h2 {
+        font-size: 2em;
+      }
+  
+      .text-content p {
+        font-size: 1em;
+      }
+  
+      .empresa {
+        margin: 2rem;
+        padding: 10px;
+        font-size: 12px;
+      }
+  
+      .swiper__logo img {
+        width: 30%;
+        height: 30%;
+      }
+  
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 40px;
+        height: 40px;
+      }
+  
+      .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+      }
+    }

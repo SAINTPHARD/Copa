@@ -1,0 +1,104 @@
+.cabecalho {
+    background-color: #243834;    /* Define a cor de fundo do cabeçalho */
+    display: flex;                /* Usa flexbox para layout */
+    justify-content:center;       /* Centraliza os itens horizontalmente */
+    align-items: center;          /* Centraliza os itens verticalmente */
+    margin: 0;                    /* Remove margens externas */
+    padding: 10px;                /* Adiciona espaçamento interno */
+    position: fixed;              /* Fixa o cabeçalho na tela */
+    width: 100%;                  /* Ocupa toda a largura */
+    top: 0;                       /* Alinha ao topo */
+    left: 0;                      /* Alinha à esquerda */
+    right: 0;                     /* Alinha à direita */
+    z-index: 1000;                /* Define a ordem de empilhamento */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adiciona sombra */
+}
+
+.logo {
+    height: 40px;                 /* Define altura do logo */
+    width: auto;                  /* Largura automática mantendo proporção */
+    margin-right: 1.5rem;         /* Espaçamento à direita */
+}
+
+.menu {
+    display: flex;                /* Usa flexbox para layout */
+    align-items: center;          /* Centraliza itens verticalmente */
+}
+
+.menu__lista {
+    display: flex;                /* Usa flexbox para layout */
+    list-style: none;             /* Remove marcadores da lista */
+    gap: 1rem;                    /* Espaçamento entre itens */
+    margin: 4px; padding: 4px;    /* Margens e preenchimento */
+    align-items: center;          /* Centraliza itens verticalmente */
+    margin-right: 50px;           /* Margem direita */
+}
+
+.menu__lista__link {
+    position: relative;           /* Para posicionamento do submenu */
+}
+
+.menu__link, .area-cliente {
+    color: #FFFFFF;               /* Cor do texto */
+    text-decoration: none;        /* Remove sublinhado */
+    font-size: 0.9rem;           /* Tamanho da fonte */
+    padding: 0.5rem;             /* Espaçamento interno */
+    display: block;              /* Elemento em bloco */
+    cursor: pointer;             /* Cursor tipo pointer */
+    transition: color 0.3s ease; /* Animação de cor */
+}
+
+.menu__link:hover, .area-cliente:hover {
+    color: #fff;                 /* Cor ao passar mouse */
+}
+
+.submenu {
+    display: none;               /* Esconde submenu inicialmente */
+    position: absolute;          /* Posicionamento absoluto */
+    top: 100%;                   /* Posição em relação ao pai */
+    left: 0;                     /* Alinha à esquerda */
+    background-color: #FFFFFF;   /* Cor de fundo */
+    min-width: 200px;           /* Largura mínima */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra */
+    border-radius: 4px;          /* Bordas arredondadas */
+    padding: 0.5rem 0;          /* Espaçamento interno */
+    z-index: 1001;              /* Ordem de empilhamento */
+}
+
+.menu__lista__link:hover .submenu {
+    display: block;              /* Mostra submenu ao passar mouse */
+}
+
+.submenu li {
+    list-style: none;           /* Remove marcadores */
+}
+
+.submenu a {
+    color: #333333;             /* Cor do texto */
+    text-decoration: none;      /* Remove sublinhado */
+    padding: 0.5rem 1rem;       /* Espaçamento interno */
+    display: block;             /* Elemento em bloco */
+    font-size: 0.85rem;        /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Animação */
+}
+
+.submenu a:hover {
+    background-color: #f5f5f5;  /* Cor de fundo ao passar mouse */
+    color: #FF6B35;            /* Cor do texto ao passar mouse */
+}
+
+.menu__lista__link:nth-last-child(3) .area-cliente {
+    color: #FF6B35;            /* Cor especial para área cliente */
+}
+
+.menu__lista__link:last-child .menu__link, .menu__lista li:nth-last-child(-n+2):not(.submenu li) {
+    background-color: #FF6B35;  /* Cor de fundo para botões de ação */
+    color: white;              /* Cor do texto */
+    padding: 0.5rem 1rem;      /* Espaçamento interno */
+    border-radius: 4px;        /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Animação */
+}
+
+.menu__lista__link:last-child .menu__link:hover {
+    background-color: #e55a2a;  /* Cor de fundo ao passar mouse */
+}
